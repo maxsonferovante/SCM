@@ -41,6 +41,9 @@
             this.cmbBxFuncionario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.mskdTxtBxDataRetirada = new System.Windows.Forms.MaskedTextBox();
+            this.txtBxQuantEstoque = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbMaterial
@@ -58,13 +61,14 @@
             this.cmbBxMaterial.FormattingEnabled = true;
             this.cmbBxMaterial.Location = new System.Drawing.Point(17, 25);
             this.cmbBxMaterial.Name = "cmbBxMaterial";
-            this.cmbBxMaterial.Size = new System.Drawing.Size(313, 21);
+            this.cmbBxMaterial.Size = new System.Drawing.Size(269, 21);
             this.cmbBxMaterial.TabIndex = 1;
+            this.cmbBxMaterial.SelectedIndexChanged += new System.EventHandler(this.cmbBxMaterial_SelectedIndexChanged);
             // 
             // lbQuantidade
             // 
             this.lbQuantidade.AutoSize = true;
-            this.lbQuantidade.Location = new System.Drawing.Point(337, 9);
+            this.lbQuantidade.Location = new System.Drawing.Point(14, 49);
             this.lbQuantidade.Name = "lbQuantidade";
             this.lbQuantidade.Size = new System.Drawing.Size(62, 13);
             this.lbQuantidade.TabIndex = 2;
@@ -72,7 +76,7 @@
             // 
             // mskdTxtBxQuantidade
             // 
-            this.mskdTxtBxQuantidade.Location = new System.Drawing.Point(340, 25);
+            this.mskdTxtBxQuantidade.Location = new System.Drawing.Point(17, 65);
             this.mskdTxtBxQuantidade.Mask = "00000";
             this.mskdTxtBxQuantidade.Name = "mskdTxtBxQuantidade";
             this.mskdTxtBxQuantidade.Size = new System.Drawing.Size(59, 20);
@@ -82,7 +86,7 @@
             // lbSetor
             // 
             this.lbSetor.AutoSize = true;
-            this.lbSetor.Location = new System.Drawing.Point(14, 72);
+            this.lbSetor.Location = new System.Drawing.Point(9, 105);
             this.lbSetor.Name = "lbSetor";
             this.lbSetor.Size = new System.Drawing.Size(35, 13);
             this.lbSetor.TabIndex = 4;
@@ -92,14 +96,14 @@
             // 
             this.cmbBxSetor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBxSetor.FormattingEnabled = true;
-            this.cmbBxSetor.Location = new System.Drawing.Point(17, 88);
+            this.cmbBxSetor.Location = new System.Drawing.Point(12, 121);
             this.cmbBxSetor.Name = "cmbBxSetor";
             this.cmbBxSetor.Size = new System.Drawing.Size(313, 21);
             this.cmbBxSetor.TabIndex = 5;
             // 
             // bttSalvar
             // 
-            this.bttSalvar.Location = new System.Drawing.Point(17, 208);
+            this.bttSalvar.Location = new System.Drawing.Point(12, 237);
             this.bttSalvar.Name = "bttSalvar";
             this.bttSalvar.Size = new System.Drawing.Size(75, 23);
             this.bttSalvar.TabIndex = 6;
@@ -108,7 +112,7 @@
             // 
             // bttCancelar
             // 
-            this.bttCancelar.Location = new System.Drawing.Point(123, 208);
+            this.bttCancelar.Location = new System.Drawing.Point(118, 237);
             this.bttCancelar.Name = "bttCancelar";
             this.bttCancelar.Size = new System.Drawing.Size(75, 23);
             this.bttCancelar.TabIndex = 7;
@@ -118,7 +122,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 129);
+            this.label1.Location = new System.Drawing.Point(9, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 8;
@@ -128,7 +132,7 @@
             // 
             this.cmbBxFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBxFuncionario.FormattingEnabled = true;
-            this.cmbBxFuncionario.Location = new System.Drawing.Point(17, 146);
+            this.cmbBxFuncionario.Location = new System.Drawing.Point(12, 185);
             this.cmbBxFuncionario.Name = "cmbBxFuncionario";
             this.cmbBxFuncionario.Size = new System.Drawing.Size(181, 21);
             this.cmbBxFuncionario.TabIndex = 9;
@@ -136,7 +140,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(205, 129);
+            this.label2.Location = new System.Drawing.Point(200, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 10;
@@ -145,18 +149,46 @@
             // mskdTxtBxDataRetirada
             // 
             this.mskdTxtBxDataRetirada.Enabled = false;
-            this.mskdTxtBxDataRetirada.Location = new System.Drawing.Point(223, 145);
+            this.mskdTxtBxDataRetirada.Location = new System.Drawing.Point(218, 184);
             this.mskdTxtBxDataRetirada.Mask = "00/00/0000";
             this.mskdTxtBxDataRetirada.Name = "mskdTxtBxDataRetirada";
             this.mskdTxtBxDataRetirada.Size = new System.Drawing.Size(68, 20);
             this.mskdTxtBxDataRetirada.TabIndex = 11;
             this.mskdTxtBxDataRetirada.ValidatingType = typeof(System.DateTime);
             // 
+            // txtBxQuantEstoque
+            // 
+            this.txtBxQuantEstoque.Enabled = false;
+            this.txtBxQuantEstoque.Location = new System.Drawing.Point(302, 26);
+            this.txtBxQuantEstoque.Name = "txtBxQuantEstoque";
+            this.txtBxQuantEstoque.Size = new System.Drawing.Size(44, 20);
+            this.txtBxQuantEstoque.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(346, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(299, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Quantidade em estoque:";
+            // 
             // TelaRetirar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 241);
+            this.ClientSize = new System.Drawing.Size(419, 272);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtBxQuantEstoque);
             this.Controls.Add(this.mskdTxtBxDataRetirada);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbBxFuncionario);
@@ -195,5 +227,8 @@
         private System.Windows.Forms.ComboBox cmbBxFuncionario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox mskdTxtBxDataRetirada;
+        private System.Windows.Forms.TextBox txtBxQuantEstoque;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

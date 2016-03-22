@@ -42,8 +42,10 @@ namespace SCM
                     {
                         while (daTodos.Read())
                         {
-                            cmbBxMaterialExistente.Items.Add(daTodos[0]);
-                            label1.Text = daTodos[0].ToString();
+                            if (!daTodos.IsDBNull(0))
+                            {
+                                cmbBxMaterialExistente.Items.Add(daTodos["nome"]);
+                            }
                         }
                         
                     }
@@ -84,9 +86,9 @@ namespace SCM
                 }
                 else
                 {
-                    if (mskdTxtBxQuantidade.Text.ToString() == "")
+                    if (mskdTxtBxQuantidade.Text.ToString() == "" || Int32.Parse(mskdTxtBxQuantidade.Text.ToString()) <1)
                     {
-                        MessageBox.Show("Não esqueça de informa a quantidade do material.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Não esqueça de informa uma quantidade válida do material.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -106,6 +108,7 @@ namespace SCM
                                     {
                                         cmd.CommandText = "INSERT INTO material (nome,quant) VALUES (\'" + cmbBxMaterialExistente.Text.ToString() + "','" + mskdTxtBxQuantidade.Text.ToString() + "\')";
                                         cmd.ExecuteNonQuery();
+                                        //*Quando o produto já estiver cadastrado, a nova quantidade é somada com a alterior.
                                     }
                                 }
                             }// fim da instancia do objeto SQLiteCommand.
