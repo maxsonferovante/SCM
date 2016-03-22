@@ -15,7 +15,7 @@ namespace SCM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaPrincipal());
+            Application.Run(new Telalogin());
         }
     }
 }

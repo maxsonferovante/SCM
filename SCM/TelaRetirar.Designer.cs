@@ -37,6 +37,10 @@
             this.cmbBxSetor = new System.Windows.Forms.ComboBox();
             this.bttSalvar = new System.Windows.Forms.Button();
             this.bttCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbBxFuncionario = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mskdTxtBxDataRetirada = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lbMaterial
@@ -44,9 +48,9 @@
             this.lbMaterial.AutoSize = true;
             this.lbMaterial.Location = new System.Drawing.Point(14, 9);
             this.lbMaterial.Name = "lbMaterial";
-            this.lbMaterial.Size = new System.Drawing.Size(44, 13);
+            this.lbMaterial.Size = new System.Drawing.Size(47, 13);
             this.lbMaterial.TabIndex = 0;
-            this.lbMaterial.Text = "Material";
+            this.lbMaterial.Text = "Material:";
             // 
             // cmbBxMaterial
             // 
@@ -80,9 +84,9 @@
             this.lbSetor.AutoSize = true;
             this.lbSetor.Location = new System.Drawing.Point(14, 72);
             this.lbSetor.Name = "lbSetor";
-            this.lbSetor.Size = new System.Drawing.Size(32, 13);
+            this.lbSetor.Size = new System.Drawing.Size(35, 13);
             this.lbSetor.TabIndex = 4;
-            this.lbSetor.Text = "Setor";
+            this.lbSetor.Text = "Setor:";
             // 
             // cmbBxSetor
             // 
@@ -111,11 +115,52 @@
             this.bttCancelar.Text = "Cancelar";
             this.bttCancelar.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Funcionário:";
+            // 
+            // cmbBxFuncionario
+            // 
+            this.cmbBxFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBxFuncionario.FormattingEnabled = true;
+            this.cmbBxFuncionario.Location = new System.Drawing.Point(17, 146);
+            this.cmbBxFuncionario.Name = "cmbBxFuncionario";
+            this.cmbBxFuncionario.Size = new System.Drawing.Size(181, 21);
+            this.cmbBxFuncionario.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(205, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Data da retirada:";
+            // 
+            // mskdTxtBxDataRetirada
+            // 
+            this.mskdTxtBxDataRetirada.Enabled = false;
+            this.mskdTxtBxDataRetirada.Location = new System.Drawing.Point(223, 145);
+            this.mskdTxtBxDataRetirada.Mask = "00/00/0000";
+            this.mskdTxtBxDataRetirada.Name = "mskdTxtBxDataRetirada";
+            this.mskdTxtBxDataRetirada.Size = new System.Drawing.Size(68, 20);
+            this.mskdTxtBxDataRetirada.TabIndex = 11;
+            this.mskdTxtBxDataRetirada.ValidatingType = typeof(System.DateTime);
+            // 
             // TelaRetirar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 241);
+            this.Controls.Add(this.mskdTxtBxDataRetirada);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbBxFuncionario);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bttCancelar);
             this.Controls.Add(this.bttSalvar);
             this.Controls.Add(this.cmbBxSetor);
@@ -130,6 +175,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SCM - Retirada de Material";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.TelaRetirar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +191,9 @@
         private System.Windows.Forms.ComboBox cmbBxSetor;
         private System.Windows.Forms.Button bttSalvar;
         private System.Windows.Forms.Button bttCancelar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbBxFuncionario;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox mskdTxtBxDataRetirada;
     }
 }

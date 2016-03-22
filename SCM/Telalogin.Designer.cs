@@ -40,7 +40,7 @@
             this.bttEntrar.Location = new System.Drawing.Point(53, 64);
             this.bttEntrar.Name = "bttEntrar";
             this.bttEntrar.Size = new System.Drawing.Size(84, 23);
-            this.bttEntrar.TabIndex = 0;
+            this.bttEntrar.TabIndex = 1;
             this.bttEntrar.Text = "Entrar";
             this.bttEntrar.UseVisualStyleBackColor = true;
             this.bttEntrar.Click += new System.EventHandler(this.bttEntrar_Click);
@@ -50,7 +50,7 @@
             this.bttAlterarSenha.Location = new System.Drawing.Point(145, 64);
             this.bttAlterarSenha.Name = "bttAlterarSenha";
             this.bttAlterarSenha.Size = new System.Drawing.Size(84, 23);
-            this.bttAlterarSenha.TabIndex = 1;
+            this.bttAlterarSenha.TabIndex = 2;
             this.bttAlterarSenha.Text = "Alterar Senha";
             this.bttAlterarSenha.UseVisualStyleBackColor = true;
             this.bttAlterarSenha.Click += new System.EventHandler(this.bttAlterarSenha_Click);
@@ -68,8 +68,9 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(53, 33);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(176, 20);
-            this.txtSenha.TabIndex = 3;
+            this.txtSenha.TabIndex = 0;
             // 
             // Telalogin
             // 
@@ -84,8 +85,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Telalogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SCM - Login";
-            this.Load += new System.EventHandler(this.Telalogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

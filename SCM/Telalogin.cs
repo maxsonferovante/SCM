@@ -65,7 +65,7 @@ namespace SCM
                     dialogSalvarBackupObrigatorio.Filter = "Banco de dados do SCM (*.bd)|*.bd";
 
 
-                    //Nome do arquivo padrão: sgc_dd-MM-yyyy.bd
+                    //Nome do arquivo padrão: SCM_dd-MM-yyyy.bd
                     dialogSalvarBackupObrigatorio.FileName = "scm_" + DateTime.Now.ToString("dd-MM-yyyy") + ".bd";
                     DialogResult resultado = dialogSalvarBackupObrigatorio.ShowDialog();
 
@@ -91,7 +91,7 @@ namespace SCM
                         cmd.CommandText = "CREATE  TABLE \"material\" (\"numero\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,\"nome\" TEXT, \"quant\" NUMERIC)";
                         cmd.ExecuteNonQuery();
 
-                        cmd.CommandText = "CREATE  TABLE \"retirada\" (\"numero\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,\"nome\" TEXT, \"quant\" NUMERIC, \"setor\" TEXT, \"datadesaida\" TEXT)";
+                        cmd.CommandText = "CREATE  TABLE \"retirada\" (\"numero\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,\"nome\" TEXT, \"quant\" NUMERIC, \"setor\" TEXT,\"funcionario\" TEXT, \"datadesaida\" TEXT)";
                         cmd.ExecuteNonQuery();
                         
                         cmd.CommandText = "CREATE TABLE \"usuario\" (\"senha\" TEXT NOT NULL )";
@@ -103,7 +103,7 @@ namespace SCM
                         cmd.CommandText = "INSERT INTO \"usuario\" VALUES (\"7d021f22b014e8e28cabd583b8e23098\");";
                         cmd.ExecuteNonQuery();
 
-                        cmd.CommandText = "INSERT INTO \"backup\" VALUES (\"" + DateTime.Now.ToString("dd/MM/yyyy") + "\");";
+                        cmd.CommandText = "INSERT INTO \"backups\" VALUES (\"" + DateTime.Now.ToString("dd/MM/yyyy") + "\")";
                         cmd.ExecuteNonQuery();
                     }
                     cnn.Close();
@@ -167,8 +167,8 @@ namespace SCM
 
         private void bttAlterarSenha_Click(object sender, EventArgs e)
         {
-            TelaAlterarSenha alterarSenha = new TelaAlterarSenha();
-            alterarSenha.ShowDialog();
+            //TelaAlterarSenha alterarSenha = new TelaAlterarSenha();
+            //alterarSenha.ShowDialog();
         }
 
         public void ApagaBackupAntigo()
@@ -203,12 +203,12 @@ namespace SCM
             using (SQLiteConnection cnn = new SQLiteConnection("data source=scm.bd "))
             {
                 cnn.Open();
-                using (SQLiteCommand command = new SQLiteCommand("SELECT * FROM backup ", cnn))
+                using (SQLiteCommand command = new SQLiteCommand("SELECT * FROM backups ", cnn))
                 {
                     using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         reader.Read();
-                        string ultimadata = reader["data"].ToString();
+                        string ultimadata = reader["ultimadata"].ToString();
                         TimeSpan direfencia = DateTime.Now - Convert.ToDateTime(ultimadata);
                         dias = direfencia.TotalDays;
                     }
@@ -225,7 +225,7 @@ namespace SCM
                 cnn.Open();
                 using (SQLiteCommand command = new SQLiteCommand(cnn))
                 {
-                    command.CommandText = " UPDATE backup SET data = '" + DateTime.Now.ToString("dd-MM-yyyy") + "' where rowid = 1";
+                    command.CommandText = " UPDATE backups SET ultimadata = '" + DateTime.Now.ToString("dd-MM-yyyy") + "' where rowid = 1";
                     command.ExecuteNonQuery();
                 }
                 cnn.Close();

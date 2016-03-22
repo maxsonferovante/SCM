@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace SCM
 {
-    public partial class TelaRetirar : Form
+    public partial class TelaSobre : Form
     {
-        public TelaRetirar()
+        public TelaSobre()
         {
             InitializeComponent();
-        }
-
-        private void TelaRetirar_Load(object sender, EventArgs e)
-        {
-            mskdTxtBxDataRetirada.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
     }
 }

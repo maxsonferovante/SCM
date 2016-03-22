@@ -48,6 +48,7 @@
             this.bttCancelar.TabIndex = 13;
             this.bttCancelar.Text = "Cancelar";
             this.bttCancelar.UseVisualStyleBackColor = true;
+            this.bttCancelar.Click += new System.EventHandler(this.bttCancelar_Click);
             // 
             // bttSalvar
             // 
@@ -57,6 +58,7 @@
             this.bttSalvar.TabIndex = 12;
             this.bttSalvar.Text = "Salvar";
             this.bttSalvar.UseVisualStyleBackColor = true;
+            this.bttSalvar.Click += new System.EventHandler(this.bttSalvar_Click);
             // 
             // mskdTxtBxQuantidade
             // 
@@ -101,7 +103,6 @@
             this.rdBttNovoMaterial.Name = "rdBttNovoMaterial";
             this.rdBttNovoMaterial.Size = new System.Drawing.Size(91, 17);
             this.rdBttNovoMaterial.TabIndex = 14;
-            this.rdBttNovoMaterial.TabStop = true;
             this.rdBttNovoMaterial.Text = "Novo Material";
             this.rdBttNovoMaterial.UseVisualStyleBackColor = true;
             this.rdBttNovoMaterial.CheckedChanged += new System.EventHandler(this.rdBttNovoMaterial_CheckedChanged);
@@ -109,6 +110,7 @@
             // rdBttMaterialExistente
             // 
             this.rdBttMaterialExistente.AutoSize = true;
+            this.rdBttMaterialExistente.Checked = true;
             this.rdBttMaterialExistente.Location = new System.Drawing.Point(124, 12);
             this.rdBttMaterialExistente.Name = "rdBttMaterialExistente";
             this.rdBttMaterialExistente.Size = new System.Drawing.Size(108, 17);

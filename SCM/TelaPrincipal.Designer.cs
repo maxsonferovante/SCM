@@ -35,6 +35,8 @@
             this.bttRelatorio = new System.Windows.Forms.Button();
             this.bttRegistro = new System.Windows.Forms.Button();
             this.bttBackup = new System.Windows.Forms.Button();
+            this.bttnCadFuncionarios = new System.Windows.Forms.Button();
+            this.bttnSobre = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             // 
             // bttAdicionar
             // 
-            this.bttAdicionar.Location = new System.Drawing.Point(109, 12);
+            this.bttAdicionar.Location = new System.Drawing.Point(93, 12);
             this.bttAdicionar.Name = "bttAdicionar";
             this.bttAdicionar.Size = new System.Drawing.Size(75, 47);
             this.bttAdicionar.TabIndex = 1;
@@ -63,14 +65,14 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 65);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(580, 260);
+            this.pictureBox1.Size = new System.Drawing.Size(664, 260);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // bttRelatorio
             // 
-            this.bttRelatorio.Location = new System.Drawing.Point(302, 12);
+            this.bttRelatorio.Location = new System.Drawing.Point(390, 12);
             this.bttRelatorio.Name = "bttRelatorio";
             this.bttRelatorio.Size = new System.Drawing.Size(75, 47);
             this.bttRelatorio.TabIndex = 3;
@@ -80,7 +82,7 @@
             // 
             // bttRegistro
             // 
-            this.bttRegistro.Location = new System.Drawing.Point(207, 12);
+            this.bttRegistro.Location = new System.Drawing.Point(228, 12);
             this.bttRegistro.Name = "bttRegistro";
             this.bttRegistro.Size = new System.Drawing.Size(75, 47);
             this.bttRegistro.TabIndex = 4;
@@ -90,7 +92,7 @@
             // 
             // bttBackup
             // 
-            this.bttBackup.Location = new System.Drawing.Point(427, 12);
+            this.bttBackup.Location = new System.Drawing.Point(520, 12);
             this.bttBackup.Name = "bttBackup";
             this.bttBackup.Size = new System.Drawing.Size(75, 47);
             this.bttBackup.TabIndex = 5;
@@ -98,11 +100,33 @@
             this.bttBackup.UseVisualStyleBackColor = true;
             this.bttBackup.Click += new System.EventHandler(this.bttBackup_Click);
             // 
+            // bttnCadFuncionarios
+            // 
+            this.bttnCadFuncionarios.Location = new System.Drawing.Point(309, 12);
+            this.bttnCadFuncionarios.Name = "bttnCadFuncionarios";
+            this.bttnCadFuncionarios.Size = new System.Drawing.Size(75, 47);
+            this.bttnCadFuncionarios.TabIndex = 6;
+            this.bttnCadFuncionarios.Text = "Cadastro de Funcionários";
+            this.bttnCadFuncionarios.UseVisualStyleBackColor = true;
+            this.bttnCadFuncionarios.Click += new System.EventHandler(this.bttnCadFuncionarios_Click);
+            // 
+            // bttnSobre
+            // 
+            this.bttnSobre.Location = new System.Drawing.Point(601, 12);
+            this.bttnSobre.Name = "bttnSobre";
+            this.bttnSobre.Size = new System.Drawing.Size(75, 47);
+            this.bttnSobre.TabIndex = 7;
+            this.bttnSobre.Text = "Sobre";
+            this.bttnSobre.UseVisualStyleBackColor = true;
+            this.bttnSobre.Click += new System.EventHandler(this.bttnSobre_Click);
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 341);
+            this.ClientSize = new System.Drawing.Size(688, 341);
+            this.Controls.Add(this.bttnSobre);
+            this.Controls.Add(this.bttnCadFuncionarios);
             this.Controls.Add(this.bttBackup);
             this.Controls.Add(this.bttRegistro);
             this.Controls.Add(this.bttRelatorio);
@@ -127,5 +151,7 @@
         private System.Windows.Forms.Button bttRelatorio;
         private System.Windows.Forms.Button bttRegistro;
         private System.Windows.Forms.Button bttBackup;
+        private System.Windows.Forms.Button bttnCadFuncionarios;
+        private System.Windows.Forms.Button bttnSobre;
     }
 }

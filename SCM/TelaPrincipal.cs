@@ -45,5 +45,17 @@ namespace SCM
             TelaBackup backup = new TelaBackup();
             backup.ShowDialog();
         }
+
+        private void bttnCadFuncionarios_Click(object sender, EventArgs e)
+        {
+            TelaFuncionario funcionario = new TelaFuncionario();
+            funcionario.ShowDialog();
+        }
+
+        private void bttnSobre_Click(object sender, EventArgs e)
+        {
+            TelaSobre sobre = new TelaSobre();
+            sobre.ShowDialog();
+        }
     }
 }
